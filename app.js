@@ -1,6 +1,5 @@
 const yargs = require('yargs')
 
-
 const tasks = require('./tasks')
 
 // set task options
@@ -46,9 +45,9 @@ switch (command) {
   case 'list':
 
     // get and log tasks
-    const allTasks = tasks.getAll()
+    const allTasks = tasks.getAllTasks()
     console.log(`You have ${ allTasks.length } task(s).`)
-    allTasks.forEach(task => tasks.logTasks(task))
+    allTasks.forEach(task => tasks.logTask(task))
 
     break
 
@@ -56,14 +55,26 @@ switch (command) {
   case 'create':
 
     // create task
-    const task = tasks.createTask(argv.task, argv.date)
+    const task = tasks.createTask(argv.task)
 
-    // create message
-    const message = task ? 'Task created...' : `The task ${ argv.task } could not be created.`
+    if (task) {
 
-    // log note and message
-    tasks.logTasks(task)
-    console.log(message)
+      // create message
+      const message = 'Task created...'
+
+      // log note and message
+      console.log(message)
+      tasks.logTask(task)
+
+    } else {
+
+      // create message
+      const message = `The task ${ argv.task } could not be created.`
+
+      // log message
+      console.log(message)
+      
+    }
 
     break
 
