@@ -37,7 +37,8 @@ const removeTask = task => {
 
 const getTask = task => {
   const tasks = getTasks()
-  const filteredTasks = tasks.filter(task => task.task === task)
+  const filteredTasks = tasks.filter(curTask => curTask === task)
+  return filteredTasks[0]
 }
 
 const logTask = task => {
@@ -48,6 +49,7 @@ const logTask = task => {
 module.exports = {
   getAllTasks,
   createTask,
+  getTask,
   removeTask,
   logTask
 }

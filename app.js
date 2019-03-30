@@ -64,13 +64,21 @@ switch (command) {
 
     } else {
 
-      // create message
-      const message = `The task ${ argv.task } could not be created.`
-
       // log message
-      console.log(message)
+      console.log(`The task ${ argv.task } could not be created.`)
 
     }
+
+    break
+
+  case 'read':
+
+    // find the task
+    const foundTask = tasks.getTask(argv.task)
+
+    // log task and message
+    console.log(foundTask ? `Task read` : `Task not found`)
+    tasks.logTask(foundTask)
 
     break
 
