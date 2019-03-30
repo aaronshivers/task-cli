@@ -18,7 +18,7 @@ const argv = yargs
   .command('create', 'create a new task', {
     task: taskOptions
   })
-  .command('read', 'read a task', {
+  .command('get', 'get a task', {
     task: taskOptions
   })
   .command('update', 'update a task', {
@@ -71,13 +71,13 @@ switch (command) {
 
     break
 
-  case 'read':
+  case 'get':
 
     // find the task
     const foundTask = tasks.getTask(argv.task)
 
     // log task and message
-    console.log(foundTask ? `Task read` : `Task not found`)
+    console.log(foundTask ? `Task found` : `Task not found`)
     tasks.logTask(foundTask)
 
     break
