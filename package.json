@@ -1,0 +1,26 @@
+{
+  "name": "task-cli",
+  "version": "1.0.0",
+  "description": "command line task application",
+  "main": "app.js",
+  "dependencies": {
+    "yargs": "^13.2.2"
+  },
+  "devDependencies": {
+    "expect": "^24.5.0",
+    "mocha": "^6.0.2"
+  },
+  "scripts": {
+    "test": "mocha test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronshivers/task-cli.git"
+  },
+  "author": "aaron shivers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aaronshivers/task-cli/issues"
+  },
+  "homepage": "https://github.com/aaronshivers/task-cli#readme"
+}
