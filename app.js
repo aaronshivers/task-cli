@@ -24,7 +24,7 @@ const argv = yargs
   .command('remove', 'remove a task', {
     task: taskOptions
   })
-  .example(`$0 -t 'walk the dog' -d 'today'`)
+  .example(`$0 -t 'walk the dog'`)
   .argv
 
 // get command from cli
