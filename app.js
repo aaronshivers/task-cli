@@ -19,19 +19,15 @@ const argv = yargs
     task: taskOptions
   })
   .command('read', 'read a task', {
-    read: {
-      alias: 'r'
-    }
+    task: taskOptions
   })
   .command('update', 'update a task', {
     update: {
       alias: 'u'
     }
   })
-  .command('delete', 'delete a task', {
-    delete: {
-      task: taskOptions
-    }
+  .command('remove', 'remove a task', {
+    task: taskOptions
   })
   .example(`$0 -t 'walk the dog' -d 'today'`)
   .argv
@@ -73,8 +69,19 @@ switch (command) {
 
       // log message
       console.log(message)
-      
+
     }
+
+    break
+
+  case 'remove':
+
+    // remove task
+    const removedTask = tasks.removeTask(argv.task)
+
+    // create and log message
+    const message = removedTask ? `Task removed` : `Task not found`
+    console.log(message)
 
     break
 
