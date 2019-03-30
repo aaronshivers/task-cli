@@ -5,7 +5,7 @@ const tasks = require('./tasks')
 // set task options
 const taskOptions = {
     alias: 't',
-    describe: 'task description'
+    describe: 'task info'
   }
 
 // create commands
@@ -20,11 +20,6 @@ const argv = yargs
   })
   .command('get', 'get a task', {
     task: taskOptions
-  })
-  .command('update', 'update a task', {
-    update: {
-      alias: 'u'
-    }
   })
   .command('remove', 'remove a task', {
     task: taskOptions
@@ -55,11 +50,8 @@ switch (command) {
 
     if (task) {
 
-      // create message
-      const message = 'Task created...'
-
-      // log note and message
-      console.log(message)
+      // log task and message
+      console.log('Task created...')
       tasks.logTask(task)
 
     } else {

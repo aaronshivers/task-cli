@@ -18,7 +18,7 @@ const getAllTasks = () => getTasks()
 const createTask = task => {
   const tasks = getTasks()
   const newTask = { task }
-  const duplicateTasks = tasks.filter(task => newTask.task === task)
+  const duplicateTasks = tasks.filter(curTask => curTask === task)
 
   if (duplicateTasks.length === 0) {
     tasks.push(task)
