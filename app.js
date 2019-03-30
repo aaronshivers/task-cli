@@ -1,5 +1,8 @@
 const yargs = require('yargs')
 
+
+const tasks = require('./tasks')
+
 // set task options
 const taskOptions = {
     alias: 't',
